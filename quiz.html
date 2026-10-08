@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>World Wars Quiz</title>
+  <link rel="stylesheet" href="./styles.css" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="./index.html">The World Wars</a>
+      <nav class="site-nav" aria-label="Main navigation">
+        <a href="./index.html">World War I</a>
+        <a href="./ww2.html">World War II</a>
+        <a href="./quiz.html">Quiz</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="top">
+    <section class="section">
+      <div class="container">
+        <h2>World Wars Quiz</h2>
+        <p>Test your knowledge of World War I and World War II. Choose the best answer for each question.</p>
+
+        <form id="quiz-form" class="quiz-form">
+          <fieldset class="question" data-answer="1914">
+            <legend>1. In which year did World War I begin?</legend>
+            <div class="options">
+              <label><input type="radio" name="q1" value="1912" /> 1912</label>
+              <label><input type="radio" name="q1" value="1914" /> 1914</label>
+              <label><input type="radio" name="q1" value="1916" /> 1916</label>
+              <label><input type="radio" name="q1" value="1918" /> 1918</label>
+            </div>
+          </fieldset>
+
+          <fieldset class="question" data-answer="Assassination of Archduke Franz Ferdinand">
+            <legend>2. Which event is considered the immediate trigger of World War I?</legend>
+            <div class="options">
+              <label><input type="radio" name="q2" value="Sinking of the Lusitania" /> Sinking of the Lusitania</label>
+              <label><input type="radio" name="q2" value="Assassination of Archduke Franz Ferdinand" /> Assassination of Archduke Franz Ferdinand</label>
+              <label><input type="radio" name="q2" value="Invasion of Poland" /> Invasion of Poland</label>
+              <label><input type="radio" name="q2" value="Treaty of Versailles" /> Treaty of Versailles</label>
+            </div>
+          </fieldset>
+
+          <fieldset class="question" data-answer="D-Day">
+            <legend>3. What was the code name for the Allied invasion of Normandy on June 6, 1944?</legend>
+            <div class="options">
+              <label><input type="radio" name="q3" value="Operation Barbarossa" /> Operation Barbarossa</label>
+              <label><input type="radio" name="q3" value="Operation Overlord" /> Operation Overlord</label>
+              <label><input type="radio" name="q3" value="D-Day" /> D-Day</label>
+              <label><input type="radio" name="q3" value="Operation Torch" /> Operation Torch</label>
+            </div>
+          </fieldset>
+
+          <fieldset class="question" data-answer="Germany, Italy, Japan">
+            <legend>4. Which countries formed the core of the Axis Powers in World War II?</legend>
+            <div class="options">
+              <label><input type="radio" name="q4" value="Germany, Italy, Japan" /> Germany, Italy, Japan</label>
+              <label><input type="radio" name="q4" value="Germany, Austria-Hungary, Ottoman Empire" /> Germany, Austria-Hungary, Ottoman Empire</label>
+              <label><input type="radio" name="q4" value="UK, France, Soviet Union" /> UK, France, Soviet Union</label>
+              <label><input type="radio" name="q4" value="USA, UK, China" /> USA, UK, China</label>
+            </div>
+          </fieldset>
+
+          <fieldset class="question" data-answer="1945">
+            <legend>5. In which year did World War II end?</legend>
+            <div class="options">
+              <label><input type="radio" name="q5" value="1943" /> 1943</label>
+              <label><input type="radio" name="q5" value="1944" /> 1944</label>
+              <label><input type="radio" name="q5" value="1945" /> 1945</label>
+              <label><input type="radio" name="q5" value="1946" /> 1946</label>
+            </div>
+          </fieldset>
+
+          <fieldset class="question" data-answer="Treaty of Versailles">
+            <legend>6. Which treaty formally ended World War I and imposed heavy reparations on Germany?</legend>
+            <div class="options">
+              <label><input type="radio" name="q6" value="Treaty of Brest-Litovsk" /> Treaty of Brest-Litovsk</label>
+              <label><input type="radio" name="q6" value="Treaty of Versailles" /> Treaty of Versailles</label>
+              <label><input type="radio" name="q6" value="Treaty of Trianon" /> Treaty of Trianon</label>
+              <label><input type="radio" name="q6" value="Treaty of Sèvres" /> Treaty of Sèvres</label>
+            </div>
+          </fieldset>
+
+          <div class="quiz-actions">
+            <button type="submit" class="btn">Submit Answers</button>
+            <button type="reset" class="btn btn-secondary">Reset</button>
+          </div>
+        </form>
+
+        <div id="result" class="result" hidden></div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p>Remembering the generation of 1914&ndash;1945. Lest we forget.</p>
+      <p class="small">An educational tribute page. &copy; <span id="year"></span></p>
+    </div>
+  </footer>
+
+  <script src="./quiz.js"></script>
+  <script src="./script.js"></script>
+</body>
+</html>
