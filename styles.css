@@ -21,9 +21,9 @@
   --line-soft:  #ded0a8;
 
   /* Type */
-  --font-display: "Cormorant Garamond", "Times New Roman", serif;
-  --font-body:    "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-  --font-mono:    "JetBrains Mono", "Courier New", monospace;
+  --font-display: "Fraunces", "Times New Roman", serif;
+  --font-body:    "Manrope", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  --font-mono:    "Space Mono", "Courier New", monospace;
 
   /* Layout */
   --max-width: 1180px;
@@ -222,10 +222,11 @@ body {
 
 .hero h1 {
   font-family: var(--font-display);
-  font-weight: 500;
+  font-weight: 600;
+  font-variation-settings: "opsz" 144, "SOFT" 30, "WONK" 1;
   font-size: clamp(3rem, 8vw, 6rem);
-  line-height: 0.98;
-  letter-spacing: -0.015em;
+  line-height: 0.95;
+  letter-spacing: -0.025em;
   margin: 0 0 1.5rem;
   color: var(--paper);
   max-width: 15ch;
@@ -308,10 +309,11 @@ body {
 
 h2 {
   font-family: var(--font-display);
-  font-weight: 500;
+  font-weight: 600;
+  font-variation-settings: "opsz" 96, "SOFT" 20;
   font-size: clamp(1.9rem, 3.6vw, 2.75rem);
-  line-height: 1.05;
-  letter-spacing: -0.01em;
+  line-height: 1.02;
+  letter-spacing: -0.02em;
   color: var(--ink);
   margin: 0 0 2rem;
   padding-bottom: 1rem;
@@ -385,9 +387,10 @@ h2::after {
 .card h3 {
   font-family: var(--font-display);
   font-weight: 600;
-  font-size: 1.35rem;
-  line-height: 1.2;
-  letter-spacing: -0.005em;
+  font-variation-settings: "opsz" 48, "SOFT" 20;
+  font-size: 1.4rem;
+  line-height: 1.15;
+  letter-spacing: -0.015em;
   color: var(--ink);
   margin: 0 0 0.75rem;
 }
@@ -526,9 +529,12 @@ blockquote {
   background: var(--paper-warm);
   border-left: 3px solid var(--oxide);
   font-family: var(--font-display);
-  font-size: clamp(1.15rem, 1.8vw, 1.45rem);
+  font-weight: 500;
+  font-variation-settings: "opsz" 48, "SOFT" 50, "WONK" 1;
+  font-size: clamp(1.2rem, 1.9vw, 1.5rem);
   font-style: italic;
-  line-height: 1.5;
+  line-height: 1.45;
+  letter-spacing: -0.01em;
   color: var(--ink);
   max-width: 62ch;
 }
