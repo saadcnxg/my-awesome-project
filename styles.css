@@ -1,11 +1,15 @@
 :root {
-  --ink: #1c1a17;
-  --paper: #f5f1e8;
-  --paper-alt: #ece5d5;
-  --accent: #7a2b22;
-  --accent-soft: #a04a3f;
-  --muted: #5a544a;
-  --line: #d8cfbb;
+  --ink: #2b2418;
+  --paper: #e8dcc0;
+  --paper-alt: #d9c9a3;
+  --accent: #6b1f14;
+  --accent-soft: #8f3a26;
+  --muted: #5a4d38;
+  --line: #b8a375;
+  --olive: #4a5232;
+  --olive-dark: #2f3620;
+  --khaki: #a89968;
+  --brass: #b08d3a;
   --max-width: 1080px;
 }
 
@@ -21,7 +25,11 @@ body {
   margin: 0;
   font-family: Georgia, "Times New Roman", serif;
   color: var(--ink);
-  background: var(--paper);
+  background-color: var(--paper);
+  background-image:
+    radial-gradient(circle at 15% 20%, rgba(120, 90, 40, 0.12), transparent 45%),
+    radial-gradient(circle at 85% 80%, rgba(90, 60, 20, 0.14), transparent 45%),
+    repeating-linear-gradient(0deg, rgba(60, 40, 10, 0.035) 0px, rgba(60, 40, 10, 0.035) 1px, transparent 1px, transparent 4px);
   line-height: 1.65;
 }
 
@@ -37,9 +45,12 @@ body {
   position: sticky;
   top: 0;
   z-index: 10;
-  background: rgba(28, 26, 23, 0.95);
+  background: var(--olive-dark);
+  background-image:
+    repeating-linear-gradient(90deg, rgba(0, 0, 0, 0.12) 0px, rgba(0, 0, 0, 0.12) 2px, transparent 2px, transparent 6px);
   color: var(--paper);
-  border-bottom: 3px solid var(--accent);
+  border-bottom: 4px solid var(--brass);
+  box-shadow: 0 2px 0 #1a1e11, 0 4px 10px rgba(0, 0, 0, 0.35);
 }
 
 .header-inner {
@@ -53,12 +64,16 @@ body {
 }
 
 .brand {
+  font-family: "Courier New", Courier, monospace;
   font-weight: bold;
-  letter-spacing: 0.12em;
+  letter-spacing: 0.22em;
   text-transform: uppercase;
   font-size: 0.9rem;
-  color: var(--paper);
+  color: var(--khaki);
   text-decoration: none;
+  padding: 0.25rem 0.6rem;
+  border: 1px dashed var(--khaki);
+  background: rgba(0, 0, 0, 0.18);
 }
 
 .site-nav {
@@ -70,84 +85,118 @@ body {
 .site-nav a {
   color: var(--paper);
   text-decoration: none;
-  font-size: 0.85rem;
-  letter-spacing: 0.08em;
+  font-size: 0.82rem;
+  letter-spacing: 0.14em;
   text-transform: uppercase;
-  opacity: 0.85;
+  opacity: 0.9;
+  padding: 0.25rem 0.15rem;
+  border-bottom: 2px solid transparent;
 }
 
 .site-nav a:hover {
   opacity: 1;
-  color: #f0c9a0;
+  color: var(--brass);
+  border-bottom-color: var(--brass);
 }
 
 /* Hero */
 .hero {
+  position: relative;
   background:
-    linear-gradient(rgba(28, 26, 23, 0.78), rgba(28, 26, 23, 0.86)),
-    radial-gradient(circle at 25% 20%, #5a544a, #1c1a17 70%);
+    linear-gradient(rgba(43, 36, 24, 0.82), rgba(43, 36, 24, 0.9)),
+    repeating-linear-gradient(135deg, #3d3a24 0px, #3d3a24 20px, #4a462c 20px, #4a462c 40px);
   color: var(--paper);
   padding: 5rem 0 4rem;
-  border-bottom: 3px solid var(--accent);
+  border-bottom: 5px solid var(--brass);
+  overflow: hidden;
+}
+
+.hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image:
+    radial-gradient(circle at 10% 90%, rgba(176, 141, 58, 0.18), transparent 40%),
+    radial-gradient(circle at 90% 10%, rgba(107, 31, 20, 0.28), transparent 45%);
+  pointer-events: none;
+}
+
+.hero .container {
+  position: relative;
+  z-index: 1;
 }
 
 .kicker {
   text-transform: uppercase;
-  letter-spacing: 0.3em;
-  font-size: 0.75rem;
-  color: #d8b48c;
+  letter-spacing: 0.4em;
+  font-size: 0.72rem;
+  color: var(--brass);
   margin: 0 0 0.75rem;
+  font-family: "Courier New", Courier, monospace;
 }
 
 .hero h1 {
   font-size: clamp(2.5rem, 6vw, 4.25rem);
   margin: 0 0 1rem;
-  letter-spacing: 0.02em;
+  letter-spacing: 0.06em;
   line-height: 1.05;
+  text-transform: uppercase;
+  text-shadow: 3px 3px 0 rgba(0, 0, 0, 0.45);
+  border-bottom: 3px double var(--brass);
+  display: inline-block;
+  padding-bottom: 0.4rem;
 }
 
 .lede {
   font-size: 1.15rem;
   max-width: 62ch;
   color: #e6ddcd;
-  margin: 0 0 2.25rem;
+  margin: 1rem 0 2.25rem;
+  font-style: italic;
 }
 
 .hero-stats {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
   gap: 1rem;
-  border-top: 1px solid rgba(245, 241, 232, 0.25);
+  border-top: 2px solid var(--brass);
   padding-top: 1.5rem;
 }
 
 .stat {
   display: flex;
   flex-direction: column;
+  padding: 0.5rem 0.75rem;
+  background: rgba(0, 0, 0, 0.28);
+  border-left: 3px solid var(--brass);
 }
 
 .stat-number {
   font-size: 1.6rem;
   font-weight: bold;
-  color: #f0c9a0;
+  color: var(--brass);
+  font-family: "Courier New", Courier, monospace;
+  letter-spacing: 0.05em;
 }
 
 .stat-label {
-  font-size: 0.8rem;
+  font-size: 0.75rem;
   text-transform: uppercase;
-  letter-spacing: 0.12em;
+  letter-spacing: 0.16em;
   color: #cbbfae;
 }
 
 /* Sections */
 .section {
   padding: 4rem 0;
+  position: relative;
 }
 
 .section-alt {
   background: var(--paper-alt);
-  border-top: 1px solid var(--line);
-  border-bottom: 1px solid var(--line);
+  border-top: 2px solid var(--olive);
+  border-bottom: 2px solid var(--olive);
+  background-image: repeating-linear-gradient(90deg, rgba(90, 70, 30, 0.05) 0px, rgba(90, 70, 30, 0.05) 1px, transparent 1px, transparent 8px);
 }
 
 h2 {
@@ -155,6 +204,10 @@ h2 {
   margin: 0 0 1.25rem;
   position: relative;
   padding-bottom: 0.5rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--olive-dark);
+  text-shadow: 1px 1px 0 rgba(184, 163, 117, 0.6);
 }
 
 h2::after {
@@ -162,9 +215,9 @@ h2::after {
   position: absolute;
   left: 0;
   bottom: 0;
-  width: 60px;
-  height: 4px;
-  background: var(--accent);
+  width: 90px;
+  height: 5px;
+  background: repeating-linear-gradient(90deg, var(--accent) 0px, var(--accent) 12px, var(--brass) 12px, var(--brass) 18px, var(--olive) 18px, var(--olive) 24px);
 }
 
 /* Cards */
@@ -178,15 +231,27 @@ h2::after {
 .card {
   background: var(--paper);
   border: 1px solid var(--line);
-  border-left: 4px solid var(--accent);
+  border-left: 5px solid var(--olive);
   padding: 1.25rem 1.35rem;
-  box-shadow: 0 2px 0 rgba(28, 26, 23, 0.06);
+  box-shadow: 3px 3px 0 rgba(60, 40, 10, 0.18);
+  position: relative;
+}
+
+.card::before {
+  content: "★";
+  position: absolute;
+  top: 0.5rem;
+  right: 0.65rem;
+  color: var(--brass);
+  font-size: 0.9rem;
 }
 
 .card h3 {
   margin: 0 0 0.5rem;
-  font-size: 1.1rem;
-  letter-spacing: 0.02em;
+  font-size: 1.05rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--accent);
 }
 
 .card p {
@@ -200,7 +265,7 @@ h2::after {
   list-style: none;
   margin: 2rem 0 0;
   padding: 0;
-  border-left: 3px solid var(--accent);
+  border-left: 4px solid var(--olive);
 }
 
 .timeline li {
@@ -211,13 +276,13 @@ h2::after {
 .timeline li::before {
   content: "";
   position: absolute;
-  left: -10px;
+  left: -11px;
   top: 0.4rem;
   width: 15px;
   height: 15px;
-  border-radius: 50%;
-  background: var(--accent);
+  background: var(--brass);
   border: 3px solid var(--paper-alt);
+  box-shadow: 0 0 0 1px var(--olive-dark);
 }
 
 .timeline .year {
@@ -225,7 +290,8 @@ h2::after {
   font-weight: bold;
   font-size: 1.15rem;
   color: var(--accent);
-  letter-spacing: 0.06em;
+  letter-spacing: 0.1em;
+  font-family: "Courier New", Courier, monospace;
 }
 
 .timeline p {
@@ -245,16 +311,19 @@ h2::after {
   padding: 0.85rem 1rem;
   background: var(--paper);
   border: 1px solid var(--line);
+  border-left: 4px solid var(--brass);
+  box-shadow: 2px 2px 0 rgba(60, 40, 10, 0.12);
 }
 
 /* Quote */
 blockquote {
   margin: 2.5rem 0 0;
   padding: 1.25rem 1.5rem;
-  border-left: 5px solid var(--accent);
+  border-left: 6px solid var(--accent);
   background: var(--paper-alt);
   font-style: italic;
   font-size: 1.05rem;
+  box-shadow: inset 0 0 0 1px var(--line);
 }
 
 blockquote cite {
@@ -263,15 +332,18 @@ blockquote cite {
   font-style: normal;
   font-size: 0.85rem;
   color: var(--muted);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
 }
 
 /* Footer */
 .site-footer {
-  background: var(--ink);
-  color: #d8cfbb;
+  background: var(--olive-dark);
+  color: #cbbfae;
   padding: 2.5rem 0;
   text-align: center;
-  border-top: 3px solid var(--accent);
+  border-top: 5px solid var(--brass);
+  background-image: repeating-linear-gradient(90deg, rgba(0, 0, 0, 0.15) 0px, rgba(0, 0, 0, 0.15) 2px, transparent 2px, transparent 6px);
 }
 
 .site-footer p {
@@ -291,9 +363,11 @@ blockquote cite {
 
 .question {
   border: 1px solid var(--line);
+  border-left: 5px solid var(--olive);
   background: var(--paper);
   padding: 1.25rem 1.35rem;
   margin-bottom: 1.25rem;
+  box-shadow: 3px 3px 0 rgba(60, 40, 10, 0.14);
 }
 
 .question legend {
@@ -301,6 +375,7 @@ blockquote cite {
   font-size: 1.05rem;
   padding: 0 0.5rem;
   color: var(--accent);
+  letter-spacing: 0.03em;
 }
 
 .options {
@@ -317,6 +392,7 @@ blockquote cite {
   border: 1px solid var(--line);
   cursor: pointer;
   transition: background 0.15s ease;
+  background: rgba(255, 255, 255, 0.15);
 }
 
 .options label:hover {
@@ -338,36 +414,51 @@ blockquote cite {
   display: inline-block;
   background: var(--accent);
   color: var(--paper);
-  border: none;
+  border: 2px solid var(--olive-dark);
   padding: 0.75rem 1.5rem;
-  font-size: 1rem;
-  font-family: inherit;
-  letter-spacing: 0.05em;
+  font-size: 0.95rem;
+  font-family: "Courier New", Courier, monospace;
+  font-weight: bold;
+  letter-spacing: 0.14em;
   text-transform: uppercase;
   cursor: pointer;
   text-decoration: none;
+  box-shadow: 3px 3px 0 var(--olive-dark);
+  transition: transform 0.1s ease, box-shadow 0.1s ease;
 }
 
 .btn:hover {
   background: var(--accent-soft);
 }
 
+.btn:active {
+  transform: translate(2px, 2px);
+  box-shadow: 1px 1px 0 var(--olive-dark);
+}
+
 .btn-secondary {
-  background: var(--muted);
+  background: var(--olive);
+}
+
+.btn-secondary:hover {
+  background: #5a6440;
 }
 
 .result {
   margin-top: 1.5rem;
   padding: 1.25rem 1.35rem;
-  border-left: 5px solid var(--accent);
+  border-left: 6px solid var(--brass);
   background: var(--paper-alt);
   font-size: 1.05rem;
+  box-shadow: inset 0 0 0 1px var(--line);
 }
 
 .result .score {
   font-weight: bold;
   font-size: 1.3rem;
   color: var(--accent);
+  font-family: "Courier New", Courier, monospace;
+  letter-spacing: 0.05em;
 }
 
 /* Responsive tweaks */
@@ -383,5 +474,9 @@ blockquote cite {
 
   .site-nav {
     justify-content: center;
+  }
+
+  .hero h1 {
+    border-bottom-width: 2px;
   }
 }
